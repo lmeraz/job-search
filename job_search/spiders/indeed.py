@@ -17,7 +17,7 @@ class IndeedSpider(Spider):
         for link in links:
             yield response.follow(link, callback=self.parse_job_offer)
 
-        next_page = response.xpath('//span[@class="np"]/../../@href')
+        next_page = response.xpath('//span[@class="np"]/../../@href').get()
         if next_page:
             yield response.follow(next_page, callback=self.parse)
 
