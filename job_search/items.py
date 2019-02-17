@@ -5,10 +5,16 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy import Field, Item
 
 
-class JobSearchItem(scrapy.Item):
+class JobSearchItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    title = Field()
+    company = Field()
+    company_rating = Field()
+    company_reviews = Field()
+    city = Field()
+    url = Field()
+    description = Field()
